@@ -1,0 +1,23 @@
+<html>
+<title>Angular App</title>
+
+<head></head>
+
+<body>
+    <form [formGroup]="loginForm" (ngSubmit)="loginHandle(loginForm)">
+        <div class="container">
+            <div>
+                <label>User Name</label>
+                <div class="form-group"><input formControlName="userName" name="userName" type="text" /></div>
+            </div>
+            <div>
+                <label>Password</label>
+                <div class="form-group"><input formControlName="password" name="password" type="text"  /></div>
+            </div>
+            <br />
+            <div class="form-group"><input type="submit" value="Sign In" /></div>
+        </div>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<div class="page-title">{{Title}}</div>
+<div class="form-bg">
+    <form [formGroup]="employeeForm" (ngSubmit)="onFormSubmit(employeeForm)">
+
+        <div>EmployeeId</div>
+        <div class="form-group"><input type="text" name="EmployeeId" formControlName="EmployeeId" /></div>
+        <div>Name</div>
+        <div class="form-group"><input type="text" name="Name" formControlName="Name" /></div>
+        <div>Address</div>
+        <div class="form-group"><input type="text" name="Address" formControlName="Address" /></div>
+        <div>Mobile.No</div>
+        <div class="form-group"><input type="text" name="MobileNo" formControlName="MobileNo" /></div>
+        <br />
+        <div><button id="btn" type="submit">Save</button></div>
+    </form>
+</div>
+<div class="page-center">
+
+    <table>
+        <thead>
+            <tr>
+                <th>EmployeeId</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>MobileNo</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let item of Result'>
+                <td>{{item.EmployeeId}}</td>
+                <td>{{item.Name}}</td>
+                <td>{{item.Address}}</td>
+                <td>{{item.Email}}</td>
+                <td>{{item.MobileNo}}</td>
+                <td><a href="javascript:void(0)" id="editEmployee" (click)="editEmployee(item.EmployeeId)">Edit |</a>
+                </td>
+                <td><a href="javascript:void(0)" (click)="deleteEmployee(item.EmployeeId)">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
